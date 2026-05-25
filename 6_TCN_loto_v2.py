@@ -2,29 +2,6 @@
 # -*- coding: utf-8 -*-
 
 
-"""
-Polazni kod treba samo da se promeni da radi nad mojim CSV-om, a sintetička od demoa izbaciti. 
-
-Razumeo. Pravilo za sve buduće modele:
-
-polazni kod iz članka se direktno menja da radi nad tvojim loto CSV-om
-sintetička demo data, neiskorišćeni delovi, sve što ne pripada polaznom zadatku se izbacuje
-predviđa se sledeće loto kolo + back-test, snimanje u TXT
-bez paralelnih "novih" klasa ispod polaznog, bez pitanja
-
-
-
-
-Jasno. Ponavljam svojim rečima da budem siguran:
-
-Polazni kod iz članka prvo mora da proradi kakav jeste (sintetički demo, ništa ne ruši).
-Tek posle se polazni direktno menja da radi nad tvojim loto CSV-om — sintetička demo data se izbacuje, svi neiskorišćeni delovi se izbacuju.
-Cilj v2 fajla: predviđa sledeće loto kolo + back-test, snimanje rezultata u TXT.
-Bez paralelnih „novih" klasa ispod polaznog, bez postavljanja pitanja kad je sve jasno.
-"""
-
-
-
 
 """
 Hibridne arhitekture za predikciju koje kombinuju deep learning i klasične time-series modele.
@@ -32,8 +9,6 @@ Hibridne arhitekture za predikciju koje kombinuju deep learning i klasične time
 6. TCN + LSTM Hybrid for Irregular Sampling (Irregular ICU Data)
 
 Temporal Convolutional Networks (TCNs)
-
-
 """
 
 
@@ -176,8 +151,8 @@ if torch.backends.cudnn.is_available():
     torch.backends.cudnn.benchmark = False
 
 
-CSV_PATH = "/Users/4c/Desktop/GHQ/KvantniRegresor/loto7hh_4620_k41.csv"
-OUT_TXT = Path("/Users/4c/Desktop/GHQ/TimeSeriesModels/6_TCN_loto_v2_predikcija.txt")
+CSV_PATH = "/loto7hh_4620_k41.csv"
+OUT_TXT = Path("/6_TCN_loto_v2_predikcija.txt")
 
 N_MIN, N_MAX = 1, 39
 K = 7
@@ -488,9 +463,9 @@ epoch   30/30  train_loss=0.93776  val_loss=1.29130  best_epoch=1
 ✅ Trening završen. best_epoch=1, best_val_loss=1.13729
 
 Predikcija sledeće Loto 7/39 kombinacije:
-TCN_LSTM_best     -> [8, 10, 11, 16, 23, 33, 34]  (suma=135, neparnih=3/7, niskih(<=19)=4/7, raspon=26)
-TCN_LSTM_final    -> [10, 13, 14, 18, 29, 36, 38]  (suma=158, neparnih=2/7, niskih(<=19)=4/7, raspon=28)
-TCN_LSTM_ensemble -> [10, 13, 18, 23, 29, 36, 38]  (suma=167, neparnih=3/7, niskih(<=19)=3/7, raspon=28)
+TCN_LSTM_best     -> [8, x, 11, y, 23, z, 34]  (suma=135, neparnih=3/7, niskih(<=19)=4/7, raspon=26)
+TCN_LSTM_final    -> [10, x, 14, y, 29, z, 38]  (suma=158, neparnih=2/7, niskih(<=19)=4/7, raspon=28)
+TCN_LSTM_ensemble -> [10, x, 18, y, 29, z, 38]  (suma=167, neparnih=3/7, niskih(<=19)=3/7, raspon=28)
 
 Back-test (poslednjih 100 izvlačenja):
 model                  hits/7    hit%     AUC    LRAP
