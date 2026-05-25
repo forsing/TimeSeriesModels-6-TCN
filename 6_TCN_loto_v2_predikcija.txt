@@ -1,0 +1,7 @@
+
+--- 2026-05-25 16:12:15.272938 (seed=39, N=4620, epochs=30) ---
+TCN_LSTM_best     -> [8, 10, 11, 16, 23, 33, 34]  (suma=135, neparnih=3/7, niskih(<=19)=4/7, raspon=26)
+TCN_LSTM_final    -> [10, 13, 14, 18, 29, 36, 38]  (suma=158, neparnih=2/7, niskih(<=19)=4/7, raspon=28)
+TCN_LSTM_ensemble -> [10, 13, 18, 23, 29, 36, 38]  (suma=167, neparnih=3/7, niskih(<=19)=3/7, raspon=28)
+back-test: BEST hits/7=1.340, AUC=0.500, LRAP=0.257; FINAL hits/7=1.170, AUC=0.494, LRAP=0.249; ENSEMBLE hits/7=1.220, AUC=0.494, LRAP=0.250; baseline=1.256
+elapsed=1159.6s
